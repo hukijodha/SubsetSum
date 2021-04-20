@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Input Array and Sum</title>
+<meta charset="UTF-8">
+<link th:href="@{/styles/cssandjs/css/main.css}" rel="stylesheet" />
+<script type="text/javascript" th:src="@{/styles/cssandjs/js/file1.js}"></script>
+</head>
+<body>
+ 
+	<h1>Input String</h1>
+	<form action="#" th:action="@{/input}" th:object="${message}" method="post">
+	
+		 <label><strong>Input Array</strong>:</label>
+        <input type="text" th:field="*{input}" /><br/>
+ 	
+        <label><strong>SUM</strong>:</label>
+        <input type="number" th:field="*{sum}" /><br/>
+       
+		<p>
+			<input type="submit" th:onclick="showAlert()" value="Submit" /> <input type="reset"
+				value="Reset">
+		</p>
+	</form>
+	
+
+</body>
+</html>
