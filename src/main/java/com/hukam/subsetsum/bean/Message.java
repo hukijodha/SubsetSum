@@ -1,15 +1,23 @@
 package com.hukam.subsetsum.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
+@Entity
 public class Message {
 	
 	@NotNull
 	@NotEmpty 
 	String input;
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Long id;
 	
 	@Min(value=0)
 	int sum;

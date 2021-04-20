@@ -1,6 +1,7 @@
 package com.hukam.subsetsum.logic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
@@ -95,19 +96,8 @@ public class SubsetSumLogic {
 	public int[] changeStringtoArray(String inputStringArray) {
 		String[] items = inputStringArray.replaceAll("\\[", "").replaceAll("\\{", "").replaceAll("\\}", "")
 				.replaceAll("\\]", "").replaceAll("\\s", "").split(",");
+		return Arrays.stream(items).mapToInt(Integer::parseInt).toArray();
 
-		int[] results = new int[items.length];
-
-		for (int i = 0; i < items.length; i++) {
-			try {
-				results[i] = Integer.parseInt(items[i]);
-			} catch (NumberFormatException nfe) {
-				System.out.print("Input array is incorrect");
-				return null;
-			}
-			;
-		}
-		return results;
 	}
 
 }
